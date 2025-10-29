@@ -4,7 +4,7 @@
 
 ## Bouziane Rim
 
-<img src="Image BR" style="height:464px;margin-right:432px"/>
+<img src="Image BR.jpg" style="height:464px;margin-right:432px"/>
 ---
 
 # PARTIE 1 : FONDAMENTAUX DE LA SCIENCE DES DONNÉES
