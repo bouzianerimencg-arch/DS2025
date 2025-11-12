@@ -1,0 +1,24 @@
+import pandas as pd
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+# Télécharger les données historiques mensuelles de deux actions (exemple : Société Générale et Total)
+tickers = ['GLE.PA', 'FP.PA']  # Codes boursiers Euronext Paris
+data = yf.download(tickers, start="2024-01-01", end="2025-01-01", interval='1mo')['Adj Close']
+
+# Calculer les rendements mensuels (variation en pourcentage)
+returns = data.pct_change().dropna()
+
+# Calculer la matrice de corrélation de Pearson
+correlation_matrix = returns.corr()
+
+print("Matrice de corrélation des rendements mensuels :")
+print(correlation_matrix)
+
+# Visualisation simple
+plt.matshow(correlation_matrix, cmap='coolwarm')
+plt.colorbar()
+plt.xticks(range(len(tickers)), tickers)
+plt.yticks(range(len(tickers)), tickers)
+plt.title('Matrice de corrélation des actions')
+plt.show()
