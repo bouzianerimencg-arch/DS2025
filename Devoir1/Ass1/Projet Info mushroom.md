@@ -1,6 +1,4 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
-# Donne-moi un maximum d'informations détaillées et structurées sur le jeu de données 'Mushroom' disponible à cette adresse : [https://archive.ics.uci.edu/dataset/73/mushroom](https://archive.ics.uci.edu/dataset/73/mushroom). Je souhaite connaître notamment sa description complète, le contexte scientifique, les caractéristiques des variables, le nombre d'instances, les classes cibles, la présence de données manquantes, les usages courants en apprentissage automatique, et tout autre détail pertinent pour bien comprendre et exploiter ce jeu.
 
 Le jeu de données "Mushroom" disponible sur le site UCI Machine Learning Repository est un ensemble multivarié utilisé principalement pour des tâches de classification en biologie, visant à déterminer si un champignon est comestible ou toxique.
 
