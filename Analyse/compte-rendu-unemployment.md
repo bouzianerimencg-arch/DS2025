@@ -38,7 +38,7 @@ plt.savefig("unemployment_trend.png", dpi=150, bbox_inches="tight")
 
 <img src="Unemployment forcast.jpeg" style="height:464px;margin-right:432px"/>
 
-### taux de chaumage au fils des années
+### Tendance générale du chômage
 
 <img src="Tendance générale du chômage.jpeg" style="height:464px;margin-right:432px"/>
 
