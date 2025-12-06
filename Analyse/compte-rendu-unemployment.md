@@ -31,15 +31,16 @@
 
 plt.savefig("unemployment_trend.png", dpi=150, bbox_inches="tight")
 
-## Résultats principaux
+## Gravité du chaumage
+<img src="Gravité du chaumage.jpeg" style="height:464px;margin-right:432px"/>
 
-### Évolution temporelle du chômage
+### Unemployment forcast
 
-<img src="Image BR.jpg" style="height:464px;margin-right:432px"/>
+<img src="Unemployment forcast.jpeg" style="height:464px;margin-right:432px"/>
 
-### highest vs lowest unemloyement rates
+### taux de chaumage au fils des années
 
-<img src="highest vs lowest unemloyement rates.jpg" style="height:464px;margin-right:432px"/>
+<img src="taux de chaumage au fils des années.jpg" style="height:464px;margin-right:432px"/>
 
 ### Unemployment forcast
 
