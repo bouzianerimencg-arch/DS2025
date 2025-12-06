@@ -41,9 +41,9 @@ plt.savefig("unemployment_trend.png", dpi=150, bbox_inches="tight")
 
 <img src="highest vs lowest unemloyement rates.jpg" style="height:464px;margin-right:432px"/>
 
-### Tendance générale du chômage
+### Unemployment forcast
 
-![Tendance générale du chômage.jpeg](img/age_unemployment.png)
+![Unemployment forcast.jpeg](img/age_unemployment.png)
 
 Le graphique montre la tendance du taux de chômage sur la période étudiée.
 
