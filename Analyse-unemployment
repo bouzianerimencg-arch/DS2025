@@ -6,4 +6,207 @@
 import kagglehub
 umitka_global_youth_unemployment_dataset_path = kagglehub.dataset_download('umitka/global-youth-unemployment-dataset')
 print('Data source import complete.')
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+!pip install prophet
+from prophet import Prophet
+
+%matplotlib inline
+sns.set(style="whitegrid")
+df = pd.read_csv("/kaggle/input/global-youth-unemployment-dataset/youth_unemployment_global.csv")
+
+# Shape and first rows
+print("Shape:", df.shape)
+print(df.head())
+
+# Missing values
+print(df.isnull().sum())
+yearly_avg = df.groupby("Year")["YouthUnemployment"].mean()
+
+plt.figure(figsize=(12,6))
+plt.plot(yearly_avg.index, yearly_avg.values, marker='o')
+plt.title("Global Average Youth Unemployment (15-24)")
+plt.xlabel("Year")
+plt.ylabel("Unemployment Rate (%)")
+plt.grid(True)
+plt.show()
+# Highest and lowest
+highest = df.loc[df['YouthUnemployment'].idxmax()]
+lowest = df.loc[df['YouthUnemployment'].idxmin()]
+
+# Prepare data for plotting
+countries = [highest['Country'], lowest['Country']]
+values = [highest['YouthUnemployment'], lowest['YouthUnemployment']]
+colors = ['red', 'green']
+
+plt.figure(figsize=(8,5))
+plt.bar(countries, values, color=colors)
+plt.title("Highest vs Lowest Youth Unemployment")
+plt.ylabel("Youth Unemployment Rate (%)")
+for i, v in enumerate(values):
+    plt.text(i, v + 0.5, f"{v:.1f}%", ha='center', fontweight='bold')
+plt.show()
+latest_year = df[df["Year"]==2022]
+
+# Top 10 highest
+top10_high = latest_year.sort_values("YouthUnemployment", ascending=False).head(10)
+
+# Top 10 lowest
+top10_low = latest_year.sort_values("YouthUnemployment", ascending=True).head(10)
+
+# Combine for plotting
+combined = pd.concat([top10_high, top10_low])
+
+plt.figure(figsize=(12,8))
+colors = ['red']*10 + ['green']*10
+plt.barh(combined["Country"], combined["YouthUnemployment"], color=colors)
+plt.xlabel("Youth Unemployment Rate (%)")
+plt.title("Top 10 Highest and Lowest Countries by Youth Unemployment in 2022")
+plt.gca().invert_yaxis()
+
+# Add value labels
+for i, v in enumerate(combined["YouthUnemployment"]):
+    plt.text(v + 0.5, i, f"{v:.1f}%", va='center')
+
+plt.show()
+# Calculer la médiane du taux de chômage des jeunes
+median_unemployment = df_cleaned['YouthUnemployment'].median()
+
+# Créer la variable binaire 'HighUnemployment'
+df_cleaned['HighUnemployment'] = (df_cleaned['YouthUnemployment'] > median_unemployment).astype(int)
+
+print(f"Médiane du taux de chômage des jeunes: {median_unemployment:.2f}%")
+print("Distribution de la nouvelle variable 'HighUnemployment':")
+print(df_cleaned['HighUnemployment'].value_counts())
+
+# Afficher les premières lignes du DataFrame avec la nouvelle variable
+display(df_cleaned.head())
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Drop rows with NaN values in 'YouthUnemployment' for the regression plot
+df_cleaned = df.dropna(subset=['YouthUnemployment'])
+
+plt.figure(figsize=(10, 6))
+sns.regplot(x='Year', y='YouthUnemployment', data=df_cleaned, scatter_kws={'alpha':0.3})
+plt.title('Régression Linéaire : Année vs. Taux de Chômage des Jeunes')
+plt.xlabel('Année')
+plt.ylabel('Taux de Chômage des Jeunes (%)')
+plt.grid(True)
+plt.show()
+
+sample_countries = df['Country'].unique()[:10]
+sample_df = df[df['Country'].isin(sample_countries)].pivot(index='Country', columns='Year', values='YouthUnemployment')
+
+plt.figure(figsize=(15,6))
+sns.heatmap(sample_df, annot=True, fmt=".1f", cmap="YlOrRd")
+plt.title("Youth Unemployment Rates for Sample Countries")
+plt.show()
+
+countries = ["United States", "Germany", "United Kingdom"]
+df_countries = df[(df["Country"].isin(countries)) & (df["Year"] >= 1990)].sort_values(["Country", "Year"])
+
+prophet_dfs = {}
+for country in countries:
+    temp = df_countries[df_countries["Country"] == country][["Year", "YouthUnemployment"]].rename(columns={"Year":"ds","YouthUnemployment":"y"})
+    temp["ds"] = pd.to_datetime(temp["ds"], format="%Y")
+    prophet_dfs[country] = temp
+
+forecast_dfs = {}
+
+for country, data in prophet_dfs.items():
+    m = Prophet(yearly_seasonality=False)
+    m.fit(data)
+    future = m.make_future_dataframe(periods=5, freq='YE')  # use 'YE' instead of 'Y'
+    forecast = m.predict(future)
+    forecast_dfs[country] = (m, forecast)
+
+plt.figure(figsize=(14,7))
+
+for country in countries:
+    m, forecast = forecast_dfs[country]
+    plt.plot(forecast['ds'], forecast['yhat'], label=f"{country} forecast")
+    plt.fill_between(forecast['ds'], forecast['yhat_lower'], forecast['yhat_upper'], alpha=0.2)
+
+plt.xlabel("Year")
+plt.ylabel("Youth Unemployment Rate (%)")
+plt.title("Youth Unemployment Forecast (1990-2028)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+X = df_cleaned['Year'].values.reshape(-1, 1)
+y = df_cleaned['HighUnemployment']
+
+print("Shape of X:", X.shape)
+print("Shape of y:", y.shape)
+print("First 5 rows of X:\n", X[:5])
+print("First 5 rows of y:\n", y[:5])
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+print("Shape of X_train:", X_train.shape)
+print("Shape of X_test:", X_test.shape)
+print("Shape of y_train:", y_train.shape)
+print("Shape of y_test:", y_test.shape)
+
+from sklearn.linear_model import LogisticRegression
+
+# Instantiate the Logistic Regression model
+model = LogisticRegression(random_state=42)
+
+# Train the model
+model.fit(X_train, y_train)
+
+print("Logistic Regression model trained successfully.")
+
+from sklearn.metrics import classification_report, confusion_matrix
+
+# Make predictions on the test set
+y_pred = model.predict(X_test)
+
+print("Predictions on X_test generated successfully.")
+
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+print("Confusion Matrix:")
+print(confusion_matrix(y_test, y_pred))
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Get predicted probabilities for the positive class (HighUnemployment = 1)
+y_prob = model.predict_proba(X_test)[:, 1]
+
+# Sort X_test and y_test for better visualization
+sorted_indices = np.argsort(X_test.flatten())
+X_test_sorted = X_test[sorted_indices]
+y_test_sorted = y_test.iloc[sorted_indices]
+y_prob_sorted = y_prob[sorted_indices]
+
+plt.figure(figsize=(12, 7))
+
+# Plot actual 'HighUnemployment' values
+plt.scatter(X_test_sorted, y_test_sorted, color='blue', label='Valeurs Réelles (0: Faible, 1: Élevé)', alpha=0.6)
+
+# Plot predicted probabilities
+plt.plot(X_test_sorted, y_prob_sorted, color='red', label='Probabilité Prédite de Chômage Élevé')
+
+# Add a threshold line (0.5 for binary classification)
+plt.axhline(0.5, color='green', linestyle='--', label='Seuil de Classification (0.5)')
+
+plt.title('Prédictions de Régression Logistique: Année vs. Probabilité de Chômage Élevé')
+plt.xlabel('Année')
+plt.ylabel('Probabilité de Chômage Élevé / Valeur Réelle')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+
 
