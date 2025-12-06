@@ -29,13 +29,18 @@
 - Pistes d’analyses complémentaires ou d’amélioration (ajout d’autres données, modèles plus avancés).
 - df = pd.read_csv("/kaggle/input/global-youth-unemployment-dataset/youth_unemployment_global.csv")
 
-# Shape and first rows
-print("Shape:", df.shape)
-print(df.head())
+plt.savefig("unemployment_trend.png", dpi=150, bbox_inches="tight")
 
-# Missing values
-print(df.isnull().sum())
 ## Résultats principaux
+
+### Évolution temporelle du chômage
+
+![Évolution du taux de chômage](img/unemployment_trend.png)
+
+### Comparaison par groupe d’âge
+
+![Taux de chômage par groupe d’âge](img/age_unemployment.png)
+
 
 ### Tendance générale du chômage
 
