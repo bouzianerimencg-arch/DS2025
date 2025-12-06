@@ -27,6 +27,14 @@
   - Qualité ou granularité des données.
   - Absence de certaines variables explicatives.
 - Pistes d’analyses complémentaires ou d’amélioration (ajout d’autres données, modèles plus avancés).
+- df = pd.read_csv("/kaggle/input/global-youth-unemployment-dataset/youth_unemployment_global.csv")
+
+# Shape and first rows
+print("Shape:", df.shape)
+print(df.head())
+
+# Missing values
+print(df.isnull().sum())
 
 ## Conclusion
 - Rappel synthétique de ce que l’étude montre sur l’évolution du chômage.
