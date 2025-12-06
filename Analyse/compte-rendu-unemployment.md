@@ -42,9 +42,12 @@ plt.savefig("unemployment_trend.png", dpi=150, bbox_inches="tight")
 
 <img src="Tendance générale du chômage.jpeg" style="height:464px;margin-right:432px"/>
 
-### taux de chaumage au fils des années.jpeg
+### taux de chaumage au fils des années
 
 <img src="taux de chaumage au fils des années.jpeg" style="height:464px;margin-right:432px"/>
+
+### Unemployment rates 2022
+<img src="Unemployment rates 2022.jpeg" style="height:464px;margin-right:432px"/>
 
 
 ## Conclusion
