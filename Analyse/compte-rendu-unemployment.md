@@ -35,6 +35,19 @@ print(df.head())
 
 # Missing values
 print(df.isnull().sum())
+## Résultats principaux
+
+### Tendance générale du chômage
+
+![Évolution du taux de chômage](img/unemployment_trend.png)
+
+Le graphique montre la tendance du taux de chômage sur la période étudiée.
+
+### Différences par groupe
+
+![Taux de chômage par groupe d’âge](img/age_unemployment.png)
+
+Ce graphique illustre les écarts de chômage entre classes d’âge.
 
 ## Conclusion
 - Rappel synthétique de ce que l’étude montre sur l’évolution du chômage.
