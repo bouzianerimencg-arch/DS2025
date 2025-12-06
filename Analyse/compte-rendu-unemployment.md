@@ -35,12 +35,11 @@ plt.savefig("unemployment_trend.png", dpi=150, bbox_inches="tight")
 
 ### Évolution temporelle du chômage
 
-![Évolution du taux de chômage](img/unemployment_trend.png)
+<img src="Image BR.jpg" style="height:464px;margin-right:432px"/>
 
-### Comparaison par groupe d’âge
+### highest vs lowest unemloyement rates
 
-![Taux de chômage par groupe d’âge](img/age_unemployment.png)
-
+<img src="highest vs lowest unemloyement rates.jpg" style="height:464px;margin-right:432px"/>
 
 ### Tendance générale du chômage
 
