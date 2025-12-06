@@ -44,7 +44,7 @@ plt.savefig("unemployment_trend.png", dpi=150, bbox_inches="tight")
 
 ### Tendance générale du chômage
 
-![Tendance générale du chômage](img/age_unemployment.png)
+![Tendance générale du chômage.jpeg](img/age_unemployment.png)
 
 Le graphique montre la tendance du taux de chômage sur la période étudiée.
 
