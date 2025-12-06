@@ -42,17 +42,10 @@ plt.savefig("unemployment_trend.png", dpi=150, bbox_inches="tight")
 
 <img src="Tendance générale du chômage.jpeg" style="height:464px;margin-right:432px"/>
 
-### Unemployment forcast
+### taux de chaumage au fils des années.jpeg
 
-<img src="Tendance générale du chômage.jpeg" style="height:464px;margin-right:432px"/>
+<img src="taux de chaumage au fils des années.jpeg" style="height:464px;margin-right:432px"/>
 
-Le graphique montre la tendance du taux de chômage sur la période étudiée.
-
-### Différences par groupe
-
-![Taux de chômage par groupe d’âge](img/age_unemployment.png)
-
-Ce graphique illustre les écarts de chômage entre classes d’âge.
 
 ## Conclusion
 - Rappel synthétique de ce que l’étude montre sur l’évolution du chômage.
