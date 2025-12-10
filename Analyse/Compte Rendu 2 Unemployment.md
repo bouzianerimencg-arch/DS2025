@@ -1,7 +1,7 @@
 report_md = """
 # 1. Introduction
 
-Le contexte général du chômage des jeunes, l’importance de cet indicateur pour l’économie et la société, ainsi que les objectifs du travail. Il introduit brièvement le jeu de données utilisé et le cadre d’analyse choisi, en mentionnant que l’accent sera mis sur la prévision à l’aide de la méthode des forêts aléatoires.
+Le chômage des jeunes constitue aujourd’hui l’un des enjeux majeurs des économies contemporaines, tant par ses conséquences sociales que par ses effets à long terme sur la croissance et la cohésion sociale. Le présent compte rendu s’appuie sur le jeu de données « Global Youth Unemployment Dataset » disponible sur Kaggle, qui rassemble les taux de chômage des 15–24 ans pour un large ensemble de pays et sur plusieurs années, afin d’analyser les tendances observées et de proposer une démarche de prévision fondée sur les méthodes d’apprentissage automatique. Plus précisément, l’objectif est de décrire les principales caractéristiques de ces données, de présenter une analyse exploratoire des dynamiques du chômage des jeunes au niveau mondial et de discuter l’apport théorique et pratique de la méthode des forêts aléatoires pour la prévision de cet indicateur, avec une attention particulière portée aux implications pour des pays comme le Maroc.
 
 # 2. Données et prétraitement
 
