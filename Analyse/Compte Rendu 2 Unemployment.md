@@ -27,6 +27,26 @@ Ce paragraphe présente et commente les résultats empiriques du modèle de Rand
 
 Ce paragraphe met en perspective les résultats de prévision avec les enjeux économiques et sociaux liés au chômage des jeunes, en accordant une attention particulière au cas du Maroc lorsque les données le permettent. Il discute l’utilité potentielle de telles prévisions pour la conception des politiques publiques et la planification des interventions sur le marché du travail, tout en rappelant les limites liées à la qualité et à la couverture des données.
 
+plt.savefig("unemployment_trend.png", dpi=150, bbox_inches="tight")
+
+## Gravité du chaumage
+<img src="Gravité du chaumage.jpeg" style="height:464px;margin-right:432px"/>
+
+### Unemployment forcast
+
+<img src="Unemployment forcast.jpeg" style="height:464px;margin-right:432px"/>
+
+### Tendance générale du chômage
+
+<img src="Tendance générale du chômage.jpeg" style="height:464px;margin-right:432px"/>
+
+### taux de chaumage au fils des années
+
+<img src="taux de chaumage au fils des années.jpeg" style="height:464px;margin-right:432px"/>
+
+### Unemployment rates 2022
+<img src="Unemployment rates 2022.jpeg" style="height:464px;margin-right:432px"/>
+
 # 8. Conclusion et perspectives
 
 Ce paragraphe synthétise les principaux apports du travail, tant sur le plan empirique que méthodologique. Il rappelle les avantages et limites de la Random Forest pour la prévision du chômage des jeunes et propose des pistes d’amélioration possibles, comme l’intégration de nouvelles variables explicatives, la comparaison systématique avec d’autres modèles ou l’extension de l’analyse à d’autres indicateurs du marché du travail.
