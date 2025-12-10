@@ -1,19 +1,19 @@
 report_md = """
 # 1. Introduction
 
-Ce paragraphe présente le contexte général du chômage des jeunes, l’importance de cet indicateur pour l’économie et la société, ainsi que les objectifs du travail. Il introduit brièvement le jeu de données utilisé et le cadre d’analyse choisi, en mentionnant que l’accent sera mis sur la prévision à l’aide de la méthode des forêts aléatoires.
+Le contexte général du chômage des jeunes, l’importance de cet indicateur pour l’économie et la société, ainsi que les objectifs du travail. Il introduit brièvement le jeu de données utilisé et le cadre d’analyse choisi, en mentionnant que l’accent sera mis sur la prévision à l’aide de la méthode des forêts aléatoires.
 
 # 2. Données et prétraitement
 
-Ce paragraphe décrit la structure du jeu de données (variables disponibles, période couverte, nombre de pays) et explique les principales étapes de préparation des données. Il détaille la gestion des valeurs manquantes, le filtrage éventuel par pays ou région et l’ordonnancement des observations dans le temps, en soulignant l’importance de ces opérations pour la qualité de la modélisation.
+La structure du jeu de données (variables disponibles, période couverte, nombre de pays) et explique les principales étapes de préparation des données. Il détaille la gestion des valeurs manquantes, le filtrage éventuel par pays ou région et l’ordonnancement des observations dans le temps, en soulignant l’importance de ces opérations pour la qualité de la modélisation.
 
 # 3. Analyse exploratoire du chômage des jeunes
 
-Ce paragraphe présente les principaux résultats de l’analyse exploratoire, en décrivant les tendances temporelles observées, les différences entre pays ou régions et les éventuelles ruptures associées à des crises économiques. Il met en avant quelques observations clé sur le niveau et la variabilité du chômage des jeunes, en reliant ces constats au contexte macroéconomique général.
+Les principaux résultats de l’analyse exploratoire, en décrivant les tendances temporelles observées, les différences entre pays ou régions et les éventuelles ruptures associées à des crises économiques. Il met en avant quelques observations clé sur le niveau et la variabilité du chômage des jeunes, en reliant ces constats au contexte macroéconomique général.
 
 # 4. Cadre méthodologique de la Random Forest
 
-Ce paragraphe expose les principes théoriques de la méthode des forêts aléatoires en régression. Il explique le fonctionnement des arbres de décision, la logique du bagging, la sélection aléatoire de variables et le mécanisme d’agrégation des prédictions. Il précise comment cette méthode peut être adaptée à un contexte de séries temporelles, en détaillant la transformation de la série en problème supervisé et les précautions à prendre pour éviter la fuite d’information.
+Les principes théoriques de la méthode des forêts aléatoires en régression. Il explique le fonctionnement des arbres de décision, la logique du bagging, la sélection aléatoire de variables et le mécanisme d’agrégation des prédictions. Il précise comment cette méthode peut être adaptée à un contexte de séries temporelles, en détaillant la transformation de la série en problème supervisé et les précautions à prendre pour éviter la fuite d’information.
 
 # 5. Mise en œuvre pratique pour la prévision
 
